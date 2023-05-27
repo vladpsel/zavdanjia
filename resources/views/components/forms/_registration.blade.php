@@ -3,7 +3,7 @@
     <fieldset>
         <p class="label">Email:</p>
         <label>
-            <input type="email" name="email" value="" placeholder="" required>
+            <input type="email" name="email" value="{{ request()->input('email', old('email')) }}" placeholder="" required>
         </label>
     </fieldset>
 

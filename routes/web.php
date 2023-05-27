@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('app.home');
 
 Route::match(['get', 'post'], 'login', [SecurityController::class, 'login'])->name('login');
 Route::match(['get', 'post'], 'register', [SecurityController::class, 'register'])->name('register');
