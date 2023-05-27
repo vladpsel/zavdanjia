@@ -70,9 +70,12 @@ class SecurityController extends Controller
         return view('security.register');
     }
 
-    public function logout()
+    public function logout(): RedirectResponse
     {
-        die('logout');
+        Auth::logout();
+        $this->request->session()->invalidate();
+        $this->request->session()->regenerateToken();
+        return redirect()->route('login');
     }
 
 
