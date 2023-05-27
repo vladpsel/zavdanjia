@@ -25,11 +25,26 @@ class SecurityController extends Controller
         $this->securityService = $securityService;
     }
 
-    public function login()
+    public function login(): View|Factory|RedirectResponse|Application
     {
-        return view('security.login', [
+        if (!empty(Auth::user())) {
+            return redirect()->route('app.home');
+        }
 
-        ]);
+        if ($this->postSubmitted()) {
+            $credentials = $this->request->validate($this->securityService->authRules);
+
+            if (Auth::attempt($credentials)) {
+                $this->request->session()->regenerate();
+                return redirect()->route('app.home');
+            }
+
+            return back()->withErrors([
+                'error' => 'Логін або пароль не вірні',
+            ])->onlyInput('email');
+        }
+
+        return view('security.login');
     }
 
     public function register(): View|Factory|RedirectResponse|Application

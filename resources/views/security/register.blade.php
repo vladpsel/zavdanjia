@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Увійти')
+@section('title', 'Реєстрація | Zavdanjia')
 
 @section('content')
     <section>

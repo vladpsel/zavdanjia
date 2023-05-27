@@ -6,7 +6,12 @@
     <section>
         <div class="wrapper">
             <div class="full-height flex f-center v-center">
-                @include('/components/forms/_login')
+                <div class="one-of-four mx-w">
+                    <div class="img-wrp mb-2">
+                        <img src="/dist/img/logo.svg" alt="">
+                    </div>
+                    @include('/components/forms/_login')
+                </div>
             </div>
         </div>
     </section>
