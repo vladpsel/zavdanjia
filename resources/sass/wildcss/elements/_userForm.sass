@@ -1,0 +1,34 @@
+.user-form
+  fieldset,
+  .error
+    margin-bottom: 1rem
+  input,
+  .label,
+  textarea,
+  select,
+  button
+    font: normal 400 1em/1.3 $main-font
+  .label
+    margin-bottom: .8rem
+  input
+    padding: .825rem 1.2rem
+    cursor: pointer
+    display: block
+    border-radius: .438rem
+    border: 2px solid #dadada
+    transition: border-color .3s linear
+    &:focus
+      border-color: $blue-one
+  .btn-main
+    padding: .825rem 1.2rem
+    cursor: pointer
+    display: block
+    border-radius: .438rem
+    text-align: center
+    background: $blue-one
+    color: #fff
+    width: 100%
+    transition: background .3s linear
+    &:hover,
+    &:focus
+      background: $blue-two
